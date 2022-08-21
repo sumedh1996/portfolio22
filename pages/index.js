@@ -1,59 +1,49 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import React, { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-export default function Home() {
+export default function App() {
+  const parallax = useRef(null);
   return (
-    <div>
-      <Parallax pages={4} style={{ top: "0", left: "0" }}>
+    <div className="" id="Base">
+      <video
+        loop
+        muted
+        autoPlay
+        className="absolute h-auto w-auto min-w-full min-h-full max-w-none"
+      >
+        <source
+          src="https://uploads-ssl.webflow.com/61341f0505224d4d93d0097f/61341f0505224da588d009a5_building%20bg-transcode.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <Parallax
+        id="parallax"
+        ref={parallax}
+        pages={3}
+        className=" relative top-0"
+      >
         <ParallaxLayer
+          id="parallax1"
           offset={0}
-          speed={2.5}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
+          speed={0}
+          className="h-full opacity-40"
+        ></ParallaxLayer>
+        <ParallaxLayer
+          id="parallax2"
+          offset={1}
+          speed={0}
+          style={{ backgroundColor: "#0000ff" }}
         >
-          <p>Scroll down</p>
+          <h1>This is Layer 2</h1>
         </ParallaxLayer>
-
         <ParallaxLayer
-          offset={1}
-          speed={2}
-          style={{ backgroundColor: "#ff6d6d" }}
-        />
-
-<ParallaxLayer
-          offset={1}
-          speed={2}
-          style={{ backgroundColor: "#ff8080" }}
-        />
-
-<ParallaxLayer
+          id="parallax3"
           offset={2}
-          speed={2}
-          style={{ backgroundColor: "#008080" }}
-        />
-
-<ParallaxLayer
-          offset={3}
-          speed={2}
-          style={{ backgroundColor: "#ffaabb" }}
-        />
-
-        <ParallaxLayer
-          offset={4}
-          speed={0.5}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "white",
-          }}
+          speed={0}
+          style={{ backgroundColor: "#ff0000" }}
         >
-          <p>Scroll up</p>
+          <h1>This is Layer 3</h1>
         </ParallaxLayer>
       </Parallax>
     </div>
