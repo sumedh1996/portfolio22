@@ -4,12 +4,12 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 export default function App() {
   const parallax = useRef(null);
   return (
-    <div className="" id="Base">
+    <div className="h-full" id="Base">
       <video
         loop
         muted
         autoPlay
-        className="absolute h-auto w-auto min-w-full min-h-full max-w-none"
+        className="absolute h-full w-full object-cover"
       >
         <source
           src="https://uploads-ssl.webflow.com/61341f0505224d4d93d0097f/61341f0505224da588d009a5_building%20bg-transcode.mp4"
